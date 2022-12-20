@@ -27,24 +27,24 @@ public class App {
 		
 		System.out.println("Veuillez saisir la somme placée sur le compte");
 		
-		s = sc.nextInt();
+		s = sc.nextDouble();
 		
 		System.out.println("La somme placée sur le compte est de: " + s + "€");
 		
 		System.out.println("Veuillez saisir l'intérêt offert par la banque");
 		
-		i = sc.nextInt();
+		i = sc.nextDouble();
 		
 		System.out.println("L'intérêt offert par la banque est de: " + i + "%");
 		
 		System.out.println("Veuillez saisir le nombre d'années de placement");
 		
-		a = sc.nextInt();
+		a = sc.nextDouble();
 		
 		System.out.println("Le nombre d'années de placement est de: " + a + "ans");
 		
-		is = s*(1+a*i);
-		ic = s*Math.pow((1+i), a);
+		is = s*(1+a*i/100);
+		ic = s*Math.pow((1+i/100), a);
 		
 		System.out.println("La valeur acquise avec l'intérêts simple est de: " + is + "€");
 		
