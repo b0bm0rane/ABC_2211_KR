@@ -39,7 +39,7 @@ public class App {
 		
 		System.out.println("");
 		
-		System.out.println("Inversons:");
+		System.out.println("Inversons a et b :");
 		
 		System.out.println("Le nombre a est " + a + " et le nombre b est " + b);
 		
