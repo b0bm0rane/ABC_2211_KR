@@ -19,15 +19,15 @@ public class App {
 		
 		a = sc.nextInt();
 		
-		if (a < 0)
+		if (a <= 0)
 		
 		System.out.println("Vous n'êtes pas né");
 		
-		if (a > 18)
+		if (a >= 18)
 		
 		System.out.println("Vous êtes majeur"); 
 		
-		if (a >= 0 && a <= 18);
+		if (a > 0 && a < 18);
 		
 		System.out.println("Vous êtes mineur");
 		
