@@ -25,7 +25,7 @@ public class App {
 		}
 		else if (a >= 18)
 		{
-			System.out.println("Vous êtes majeur"); 
+			System.out.println("Vous êtes majeur");
 		}
 		else
 		{
