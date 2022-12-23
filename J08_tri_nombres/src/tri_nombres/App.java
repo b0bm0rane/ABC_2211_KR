@@ -27,12 +27,16 @@ public class App {
 		
 		System.out.println("Le nombre b est " + b);
 		
-		if (a < b) {
-			System.out.println(a + " < " + b);
+		System.out.println("");
+		
+		if (a > b) {
+			System.out.println("a > b ");
+			System.out.println(a + "> " + b);
 		}
 		
 		else {
-			System.out.println(b + "<" + a);
+			System.out.println("a < b");
+			System.out.println(a + " < " + b);
 		}
 		
 	}
