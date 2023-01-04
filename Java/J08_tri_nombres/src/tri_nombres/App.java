@@ -11,7 +11,6 @@ public class App {
 		
 		double a;
 		
-		
 		double b; 
 		
 		Scanner sc = new Scanner (System.in);
