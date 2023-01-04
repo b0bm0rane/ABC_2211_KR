@@ -4,6 +4,12 @@ import java.util.Scanner;
 
 public class App {
 
+	// FONCTION
+	
+	int doubler(int x) {
+		return 2*x;
+	}
+	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
@@ -16,6 +22,8 @@ public class App {
 		double c;
 		
 		Scanner sc = new Scanner (System.in);
+		
+		// DÉBUT
 		
 		System.out.println("Tri de nombres 2");
 		
@@ -45,42 +53,42 @@ public class App {
 		
 		System.out.println();
 		
-		if (a<b&&b<c) {
+		if (a<=b&&b<=c) {
 		
 			System.out.println("a<b<c");
 		
 			System.out.println(a + " < " + b + " < " + c);
 		}
 		
-		else if (a<c&&c<b) {
+		else if (a<=c&&c<=b) {
 		
 			System.out.println("a<c<b");
 		
 			System.out.println(a + " < " + c + " < " + b);
 		}
 		
-		else if (b<a&&a<c) {
+		else if (b<=a&&a<=c) {
 		
 			System.out.println("b<a<c");
 		
 			System.out.println(b + " < " + a + " < " + c);
 		}
 		
-		else if (b<c&&c<a) {
+		else if (b<=c&&c<=a) {
 		
 			System.out.println("b<c<a");
 		
 			System.out.println(b + " < " + c + " < " + a);
 		}
 			
-		else if (c<a&&a<b) {
+		else if (c<=a&&a<=b) {
 		
 			System.out.println("c<a<b");
 		
 			System.out.println(c + " < " + a + " < " + b);
 		}
 			
-		else if (c<b&&b<a) {
+		else if (c<=b&&b<=a) {
 		
 			System.out.println("c<b<a");
 		
@@ -88,6 +96,8 @@ public class App {
 		}
 		
 		sc.close();
+		
+		// FIN
 		
 	}
 
