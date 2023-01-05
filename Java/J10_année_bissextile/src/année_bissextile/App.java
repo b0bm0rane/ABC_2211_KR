@@ -23,21 +23,15 @@ public class App {
 		
 		System.out.println("L'année est " + a);
 		
-		if (a%4==0) {
+		if (a%4!=0||a%100==0&&a%400!=0) {
+		
+			System.out.println("L'année n'est pas bissextile");
+		
+		}
+		
+		else {
 		
 			System.out.println("L'année est bissextile");
-		
-		}
-		
-		else if (a%4==0&&a%100==0&&a%400!=0) {
-		
-			System.out.println("L'année n'est pas bissextile");
-		
-		}
-		
-		else if (a%4!=0) {
-		
-			System.out.println("L'année n'est pas bissextile");
 		
 		}
 		
