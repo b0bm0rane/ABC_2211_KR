@@ -51,6 +51,7 @@ public class App {
 		moyenne = (double)(nombre1 + nombre2)/2; // ou (nombre1 + nombre2) / 2f ou 2d;
 		
 		System.out.println("La moyenne est: " + moyenne);
+		
 	}
 
 }

@@ -9,7 +9,7 @@ public class App {
 
 		// VARIABLES
 		
-		int nj;
+		int a;
 		
 		Scanner sc = new Scanner (System.in);
 		
@@ -17,14 +17,33 @@ public class App {
 		
 		System.out.println("Année bissextile");
 		
-		System.out.println("Entrer le nombre de jours dans l'année");
+		System.out.println("Entrer l'année");
 		
-		nj = sc.nextInt();
+		a = sc.nextInt();
 		
-		System.out.println("L'année comporte " + nj + " jours");
+		System.out.println("L'année est " + a);
 		
-		if
+		if (a%4==0) {
 		
+			System.out.println("L'année est bissextile");
+		
+		}
+		
+		else if (a%4==0&&a%100==0&&a%400!=0) {
+		
+			System.out.println("L'année n'est pas bissextile");
+		
+		}
+		
+		else if (a%4!=0) {
+		
+			System.out.println("L'année n'est pas bissextile");
+		
+		}
+		
+		sc.close();
+		
+		// FIN
 	}
 
 }
