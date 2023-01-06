@@ -12,32 +12,22 @@ public class App {
 		// VARIABLES
 		
 		double km;
-		double q;
-		double mil;
+		
+		String quit = "q";
+		
+		String km_str;
 		
 		Scanner sc = new Scanner(System.in);
 		
-		System.out.println("Entrer un nombre entre 0.01 et 1 000 000 en km");
+		km_str = sc.nextLine();
 		
-		km = sc.nextDouble();	
+		// Conversion d'une variable de type string en type double
 		
-		(q>=0.01&&q<=1000000);
+		km = Double.parseDouble(km_str);
 		
-		mil=km/1.609;
+		// Test de comparaison de type string
 		
-		if (km>0.01&&km<1000000) {
-	
-		System.out.println("Vous avez entré " + km);
-			
-		}
-		
-		if (km=q) {
-
-		System.out.println(km + " km est égal à " + mil + "miles");
-		
-		}
-		
-		sc.close();
+		if(km_str.equals(quit));
 		
 		}
 }
