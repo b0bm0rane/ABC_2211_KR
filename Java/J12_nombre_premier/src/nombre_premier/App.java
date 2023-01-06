@@ -29,7 +29,7 @@ public class App {
 		
 		if (n<2) {
 			
-			System.out.println("Apprends à lire connard !!!");
+			System.out.println("Apprends à lire connard et recommence !!!");
 			
 		}
 		
