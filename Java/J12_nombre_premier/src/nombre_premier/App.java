@@ -21,23 +21,33 @@ public class App {
 		
 		n = sc.nextInt();
 		
-		for (i=2;i<n;i++) {
-		
-			if (n%i==0) {
-				nd++;
-			}
-		
-		}
-		
-		if (nd==0) {
+		if (n<2) {
 			
-			System.out.println("Le nombre est premier");
-		
+			System.out.println("Fais pas chier connard !!!");
+			
 		}
 		
 		else {
+		
+			for (i=2;i<n;i++) {
 			
-			System.out.println("Le nombre est composé");
+				if (n%i==0) {
+					nd++;
+				}
+			
+			}
+			
+			if (nd==0) {
+				
+				System.out.println("Le nombre est premier");
+			
+			}
+			
+			else {
+				
+				System.out.println("Le nombre est composé");
+			
+			}
 		
 		}
 		
