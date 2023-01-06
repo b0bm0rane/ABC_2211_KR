@@ -17,13 +17,19 @@ public class App {
 		
 		Scanner sc = new Scanner (System.in);
 		
-		System.out.println("Entrer un nombre");
+		System.out.println("Entrer un nombre plus grand que 1");
 		
 		n = sc.nextInt();
 		
+		if (n>1) {
+			
+			System.out.println("Bravo, tu sais lire !!!");
+			
+		}
+		
 		if (n<2) {
 			
-			System.out.println("Fais pas chier connard !!!");
+			System.out.println("Apprends à lire connard !!!");
 			
 		}
 		
@@ -48,11 +54,11 @@ public class App {
 				System.out.println("Le nombre est composé");
 			
 			}
-		
+			
 		}
 		
 		sc.close();
 		
 	}
-
+	
 }
