@@ -13,7 +13,7 @@ public class App {
 		
 		int n;
 		int i;
-		int nd;
+		int nd=0;
 		
 		Scanner sc = new Scanner (System.in);
 		
@@ -21,18 +21,27 @@ public class App {
 		
 		n = sc.nextInt();
 		
-		for (i=2;i<n-1;i++) {
+		for (i=2;i<n;i++) {
 		
-		if (n%i==0) {
-			System.out.println(n + " n'est pas un nombre premier");
+			if (n%i==0) {
+				nd++;
+			}
+		
 		}
+		
+		if (nd==0) {
+			
+			System.out.println("Le nombre est premier");
+		
+		}
+		
 		else {
-		
-			System.out.println(n + " est un nombre premier");
-		
-		}
+			
+			System.out.println("Le nombre est composé");
 		
 		}
+		
+		sc.close();
 		
 	}
 
