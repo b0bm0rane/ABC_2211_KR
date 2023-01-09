@@ -6,34 +6,55 @@ public class App {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-
-		// DÉBUT PROGRAMME 
 		
 		// VARIABLES
 		
 		double km;
 		
-		System.out.println("Conversion km miles");
-		
-		System.out.println("Entrer la valeur en km");
-		
-		km = sc.nextDouble();
+		double miles;
 		
 		String quit = "q";
 		
-		String km_str;
+		String saisie_utilisateur;
+		
+		boolean fermeture_prog = false;
 		
 		Scanner sc = new Scanner(System.in);
 		
-		km_str = sc.nextLine();
+		// DÉBUT 
 		
-		// Conversion d'une variable de type string en type double
+		while(!fermeture_prog) {
+			
+			System.out.println("Entrer une valeur en km entre 0.01 et 1000000 : ");
+			
+			saisie_utilisateur = sc.nextLine();
+			
+			if(saisie_utilisateur.equals(quit)) {
+				
+				fermeture_prog = true;
+			}
+			
+			else { 
+				
+				km = Double.parseDouble(saisie_utilisateur);
+				
+				if(km < 0.01 && km > 1000000) {
+					
+					System.out.println("Entrer une valeur en km entre 0,01 et 1000000 : ");
+					
+					saisie_utilisateur = sc.nextLine();
+				}
+				
+				else { 
+					
+					miles = km/1.609;
+					
+					System.out.println(km + " km équivaut à " + miles + " miles ");
+				}
+			}
+		}
 		
-		km = Double.parseDouble(km_str);
-		
-		// Test de comparaison de type string
-		
-		if(km_str.equals(quit));
+		sc.close();
 		
 		}
 }
