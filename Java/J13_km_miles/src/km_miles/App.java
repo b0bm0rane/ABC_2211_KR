@@ -13,6 +13,12 @@ public class App {
 		
 		double km;
 		
+		System.out.println("Conversion km miles");
+		
+		System.out.println("Entrer la valeur en km");
+		
+		km = sc.nextDouble();
+		
 		String quit = "q";
 		
 		String km_str;
