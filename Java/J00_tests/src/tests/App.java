@@ -11,7 +11,7 @@ public class App {
 		
 		int nb; 
 		
-		nb = (int) (Math.random()*100); //*100 entier
+		nb = (int) (Math.random()*101); //*100 entier
 		
 		System.out.println(nb);
 		
@@ -21,7 +21,7 @@ public class App {
 		
 		nbd = Math.random();
 		
-		System.out.println(nbd*100); //*100 (1-100)
+		System.out.println(nbd*101); //*100 (1-100)
 		
 	}
 
