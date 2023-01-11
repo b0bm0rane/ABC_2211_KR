@@ -9,34 +9,52 @@ public class App {
 
 		// VARIABLES
 		
-		int random;
+		int random; // nb genere par l'ordinateur (Réponse)
 		
-		int nb;
+		int nb; // nb donne par l'utilisateur (Question)
 		
-		int x;
+		int min = 0;
 		
-		x = 2;
+		int max = 100;
 		
-		random = (int) (Math.random()*101);
+		int x = 0; // nb essais
+		
+		random = (int) (Math.random()*101); // 0 à 100
 		
 		Scanner sc = new Scanner (System.in);
 		
 		// DEBUT
-		
+			
 		System.out.println("Jeu de la fourchette");
 		
-		System.out.println("Saisir une valeur entre 0 et 100");
+		do {
 		
-		nb = sc.nextInt();
+			System.out.println("Entrer un nombre entre " + min + " et " + max);
 		
-		if (nb == random) {
-				
-				System.out.println("Bravo vous avez trouvé en " + x + " essais");
-						
-				
-				
-		}
+			nb = sc.nextInt(); 
+		
+			x++;
 			
+			if (nb < random) {
+				
+				min = nb; 
+				
+				System.out.println("Elle est trop petite mon gars...");
+				
+			}
+			
+			else if (nb > random) {
+				
+				max = nb; 
+				
+				System.out.println("Elle est pas aussi grande...");
+				
+			}
+			
+		} while (random != nb);
+		
+		System.out.println("Bien joué ma couille");
+		
 	}
 
 }
