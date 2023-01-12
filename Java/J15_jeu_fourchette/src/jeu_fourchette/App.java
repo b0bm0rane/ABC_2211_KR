@@ -35,7 +35,13 @@ public class App {
 		
 			x++;
 			
-			if (nb < random) {
+			if (nb < min  || nb > max) { 
+			
+				System.out.println("Tu sais lire connard ???");
+				
+			}
+			
+			else if (nb < random) {
 				
 				min = nb; 
 				
@@ -53,7 +59,7 @@ public class App {
 			
 		} while (random != nb);
 		
-		System.out.println("Bien joué ma couille");
+		System.out.println("Trouvé en " + x + " essais, bien joué ma couille");
 		
 	}
 
