@@ -17,7 +17,7 @@ public class App {
 		
 		// DEBUT
 		
-		System.out.println("Barnabe fait ses courses");
+		System.out.println("Barnabe est sous tutelle mais fait ses courses...");
 		
 		System.out.println("Entrer la somme d'argent que possede Barnabe");
 		
@@ -37,7 +37,7 @@ public class App {
 			
 		}		while (s>1);
 		
-		System.out.println("Barnabe a tout claque dans " + mag + " magasins");
+		System.out.println("Barnabe a tout claque chez ABC_Meth et dans " + mag + " magasins. Mais ou est le tuteur ??? Ah, avec lui...");
 		
 		
 		sc.close();

@@ -15,6 +15,12 @@ public class App {
 		
 		// DEBUT
 		
+		int[] tableau = new int[5];
+		
+		tableau[0] = 5;
+	
+		System.out.println(tableau[0]);
+		
 	}
 
 }
