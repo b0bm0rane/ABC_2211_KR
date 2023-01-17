@@ -5,7 +5,7 @@ public class App {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
-		String [] tableau0 = {"bleu", "rouge", "vert", "jaune", "noir"};
+		String [] tableau0 = {"bleu", "rouge", "vert", "jaune", "noir"}; // entrainement
 		
 		System.out.println(tableau0[4]);
 		
