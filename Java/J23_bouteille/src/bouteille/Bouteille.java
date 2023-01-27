@@ -2,7 +2,7 @@ package bouteille;
 
 public class Bouteille {
 
-	// états / attributs 
+	// états / attributs
 	
 	private String matiere; // état inaccessible de l'exterieur de la classe
 	
@@ -16,7 +16,11 @@ public class Bouteille {
 	
 	private Boolean remplie;
 	
+	// constructeur (méthodes) 
+	
 	public Bouteille(String mat, float vol, Boolean gaz, Boolean alc) {
+		
+		// this : cet objet
 		
 		this.matiere = mat;
 		
@@ -31,6 +35,8 @@ public class Bouteille {
 		this.remplie = true;
 		
 	}
+	
+	// méthodes (opérations comportements)
 	
 	public void ouvrir() {
 		
