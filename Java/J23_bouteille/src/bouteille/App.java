@@ -11,9 +11,11 @@ public class App {
 		
 		maGirafe.vider();
 		
-		System.out.println("j'ai la tete dans le caniveau je vomis et retourne au bar");
+		System.out.println("j'ai la tete dans le caniveau, je vomis et retourne au bar");
 	
 		maGirafe.remplir();
+		
+		maGirafe.ouvrir();
 		
 		maGirafe.vider();
 		
