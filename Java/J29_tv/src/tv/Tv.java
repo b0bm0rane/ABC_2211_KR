@@ -2,6 +2,8 @@ package tv;
 
 public class Tv {
 
+	// états / attributs
+	
 	private String matiere;
 	
 	private boolean deuxPieds;
@@ -14,9 +16,13 @@ public class Tv {
 	
 	private int prixEnEuros;
 	
+	// constructeur (méthodes)
+	
 	public boolean allumee;
 	
-	public Tv(String mat, int prix, boolean pieds, String coul, String mar, int kg, boolean all) {
+	public Tv(String mat, int prix, boolean pieds, String coul, String mar, int kg, boolean all) {	
+		
+		// this : cet objet
 		
 		this.matiere= mat;
 		
@@ -31,6 +37,8 @@ public class Tv {
 		this.poidsEnKg = kg;
 		
 		this.allumee = all;
+		
+		// méthodes (opérations comportements)
 		
 		String deuxpieds;
 		

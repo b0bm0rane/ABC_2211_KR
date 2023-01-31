@@ -20,6 +20,8 @@ public class Bouteille {
 	
 	public Bouteille(String mat, float vol, Boolean gaz, Boolean alc) {
 		
+		
+		
 		// this : cet objet
 		
 		this.matiere = mat;
@@ -67,6 +69,28 @@ public class Bouteille {
 		this.remplie = true;
 		
 		System.out.println("la bouteille est remplie");
+	}
+	
+	public boolean ouverte() {
+		
+		if (this.ouverte == true) {
+			
+			System.out.println("ma bouteille est deja ouverte");
+			
+			return false;
+			
+		}
+		
+		else {
+			
+			this.ouverte = true;
+			
+			System.out.println("j'ouvre ma bouteille");
+			
+			return true;
+			
+		}
+		
 	}
 	
 }
