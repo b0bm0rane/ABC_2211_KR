@@ -6,19 +6,19 @@ public class Bouteille {
 	
 	private String matiere; // état inaccessible de l'exterieur de la classe
 	
+	private String boisson;
+	
 	private float volumeEnL;
 	
-	private Boolean gazeux;
+	private float contenanceEnL;
 	
 	private Boolean ouverte;
-	
-	private Boolean alcool;
 	
 	private Boolean remplie;
 	
 	// constructeur (méthodes) 
 	
-	public Bouteille(String mat, float vol, Boolean gaz, Boolean alc) {
+	public Bouteille(String mat, String boi, float vol, float cont, Boolean ouv, Boolean remp) {
 		
 		
 		
@@ -26,52 +26,21 @@ public class Bouteille {
 		
 		this.matiere = mat;
 		
+		this.boisson = boi;
+		
 		this.volumeEnL = vol;
-
-		this.gazeux = gaz;
 		
-		this.ouverte = false; // sinon plus de bulles xD
+		this.contenanceEnL = cont;
 		
-		this.alcool = alc;
+		this.ouverte = ouv;
 		
-		this.remplie = true;
+		this.remplie = remp;
 		
 	}
 	
 	// méthodes (opérations comportements)
 	
-	public void ouvrir() {
-		
-		this.ouverte = true;
-		
-		System.out.println("j'ai ouvert ma bouteille");
-		
-	}
-	
-	public void fermer() {
-		
-		this.ouverte = false;
-		
-		System.out.println("ma bouteille est fermee");
-		
-	}
-	
-	public void vider() {
-		
-		this.remplie = false;
-		
-		System.out.println("la bouteille est vide");
-		
-	}
-	
-	public void remplir() {
-		
-		this.remplie = true;
-		
-		System.out.println("la bouteille est remplie");
-	}
-	
-	public boolean ouverte() {
+	public Boolean ouvrir() {
 		
 		if (this.ouverte == true) {
 			
@@ -89,6 +58,78 @@ public class Bouteille {
 			
 			return true;
 			
+		}
+		
+	}
+	
+	/////////////////////////////////////////////////////////////////////////////////////////////////////
+	
+	public Boolean fermer() {
+		
+		if (this.ouverte == true) {
+			
+			System.out.println("je ferme ma bouteille");
+			
+			return false;
+		}
+		
+		
+		else {
+			
+			this.ouverte = false;
+		
+				System.out.println("ma bouteille est fermee");
+		
+		return true;
+		
+		}
+		
+	}
+	
+	/////////////////////////////////////////////////////////////////////////////////////////////////////
+	
+	public Boolean remplir() {
+		
+		if (this.remplie == true) {
+		
+		System.out.println("ma bouteille est remplie");
+		
+		return false;
+		
+		}
+		
+		else {
+			
+			this.remplie = false;
+			
+			System.out.println("je rempli ma bouteille");
+			
+			return true;
+			
+		}
+		
+	}
+	
+	/////////////////////////////////////////////////////////////////////////////////////////////////////
+		
+	public Boolean vider() {
+			
+		if (this.remplie == false) {
+			
+		System.out.println("je vide ma bouteille");
+			
+		return true;
+		
+		}
+		
+		else {
+			
+			this.remplie = true;
+			
+			System.out.println("ma bouteille est vide");
+			
+			return false;
+	
 		}
 		
 	}
