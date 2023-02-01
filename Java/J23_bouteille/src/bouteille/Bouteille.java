@@ -10,27 +10,31 @@ public class Bouteille {
 	
 	private float contenanceEnL;
 	
-	private Boolean ouverte;
+	private boolean ouverte;
 	
-	private Boolean remplie;
+	private boolean estRemplie() {
+	
+	return capaciteEnL == contenanceEnL;
+	
+	}
 	
 	// constructeur (méthodes) 
 	
-	public Bouteille(float cap, float cont, Boolean ouv, Boolean remp) {
-		
-		
+	public Bouteille(float capaciteEnL, float contenanceEnL, boolean ouverte, boolean estRemplie) {
 		
 		// this : cet objet
 		
-		this.capaciteEnL = cap;
+		this.capaciteEnL = capaciteEnL;
 		
-		this.contenanceEnL = cont;
+		this.contenanceEnL = contenanceEnL;
 		
-		this.ouverte = ouv;
+		this.ouverte = ouverte;
 		
-		this.remplie = remp;
+		this.estRemplie();
 		
 	}
+	
+	/////////////////////////////////////////////////////////////////////////////////////////////////////
 	
 	// méthodes (opérations comportements)
 	
@@ -46,7 +50,7 @@ public class Bouteille {
 		
 		else {
 			
-			this.ouverte = true;
+			this.ouverte = false;
 			
 			System.out.println("j'ouvre ma bouteille");
 			
@@ -65,14 +69,14 @@ public class Bouteille {
 			System.out.println("je ferme ma bouteille");
 			
 			return false;
+			
 		}
-		
 		
 		else {
 			
 			this.ouverte = false;
 		
-				System.out.println("ma bouteille est fermee");
+				System.out.println("ma bouteille est deja fermee");
 		
 		return true;
 		
@@ -81,12 +85,14 @@ public class Bouteille {
 	}
 	
 	/////////////////////////////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////////////////////////
 	
 	public Boolean remplir() {
 		
-		if (this.remplie == true) {
+		if (this.estRemplie() == true) {
 		
-		System.out.println("ma bouteille est remplie");
+		System.out.println("ma bouteille est deja remplie");
 		
 		return false;
 		
@@ -94,7 +100,9 @@ public class Bouteille {
 		
 		else {
 			
-			this.remplie = false;
+			this.estRemplie() = false;
+			
+			//TODO KER modifier la contenance
 			
 			System.out.println("je rempli ma bouteille");
 			
@@ -114,9 +122,9 @@ public class Bouteille {
 					
 			if (nouvelleContenanceEnL > this.capaciteEnL) {
 					
-				this.contenanceEnL = this.capaciteEnL;
+				//this.contenanceEnL = this.capaciteEnL;
 						
-				System.out.println("ma bouteille est remplie");
+				System.out.println("ma bouteille va deborder, donc je ne la remplie pas");
 				
 				return false; 
 						
@@ -142,11 +150,13 @@ public class Bouteille {
 	
 	/////////////////////////////////////////////////////////////////////////////////////////////////////
 		
-	public Boolean vider() {
+	public Boolean vider() { //TODO KER
 			
-		if (this.remplie == false) {
+		if (this.estRemplie() == false) {//TODO KER
 			
 		System.out.println("je vide ma bouteille");
+		
+		//il faut changer la contenance
 			
 		return true;
 		
@@ -154,11 +164,13 @@ public class Bouteille {
 		
 		else {
 			
-			this.remplie = true;
+			//this.remplie = true;
+			
+			//il faut mettre la contenance a zero
 			
 			System.out.println("ma bouteille est vide");
 			
-			return false;
+			return true;
 	
 		}
 		

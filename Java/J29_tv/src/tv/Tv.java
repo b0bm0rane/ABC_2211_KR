@@ -100,6 +100,7 @@ public class Tv {
 		
 	}
 	
+	//TODO KER finir le code d'eteindre
 	public void eteindre() {
 		
 		this.allumee = false;
