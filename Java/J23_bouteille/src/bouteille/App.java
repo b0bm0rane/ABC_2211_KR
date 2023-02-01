@@ -5,9 +5,9 @@ public class App {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
-		Bouteille maGirafe = new Bouteille("verre", "eau", 3, 2, true, false); 
+		Bouteille maGirafe = new Bouteille(3, 2, false, false); 
 		
-		//matiere, boisson, volumeEnL, contenanceEnL, ouverte, remplie
+		//capaciteEnL, contenanceEnL, ouverte, remplie
 		
 		maGirafe.ouvrir();
 		

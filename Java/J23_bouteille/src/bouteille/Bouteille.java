@@ -4,11 +4,9 @@ public class Bouteille {
 
 	// états / attributs
 	
-	private String matiere; // état inaccessible de l'exterieur de la classe
+	// état inaccessible de l'exterieur de la classe
 	
-	private String boisson;
-	
-	private float volumeEnL;
+	private final float capaciteEnL;
 	
 	private float contenanceEnL;
 	
@@ -18,17 +16,13 @@ public class Bouteille {
 	
 	// constructeur (méthodes) 
 	
-	public Bouteille(String mat, String boi, float vol, float cont, Boolean ouv, Boolean remp) {
+	public Bouteille(float cap, float cont, Boolean ouv, Boolean remp) {
 		
 		
 		
 		// this : cet objet
 		
-		this.matiere = mat;
-		
-		this.boisson = boi;
-		
-		this.volumeEnL = vol;
+		this.capaciteEnL = cap;
 		
 		this.contenanceEnL = cont;
 		
@@ -111,6 +105,42 @@ public class Bouteille {
 	}
 	
 	/////////////////////////////////////////////////////////////////////////////////////////////////////
+	
+	public Boolean remplir(float quantiteAjoutee) {
+		
+		if (this.ouverte) {
+			
+			float nouvelleContenanceEnL = this.contenanceEnL + quantiteAjoutee;
+					
+			if (nouvelleContenanceEnL > this.capaciteEnL) {
+					
+				this.contenanceEnL = this.capaciteEnL;
+						
+				System.out.println("ma bouteille est remplie");
+				
+				return false; 
+						
+			} else {
+				
+				this.contenanceEnL = nouvelleContenanceEnL;
+					
+				System.out.println("ma bouteille a ete remplie de " + quantiteAjoutee);
+				
+				return true;
+				
+			}
+				
+		} else {
+			
+			System.out.println("ma bouteille est fermee");
+			
+			return false;
+			
+		}
+	
+	}
+	
+	/////////////////////////////////////////////////////////////////////////////////////////////////////
 		
 	public Boolean vider() {
 			
@@ -134,5 +164,42 @@ public class Bouteille {
 		
 	}
 	
+	/////////////////////////////////////////////////////////////////////////////////////////////////////
+	
+public Boolean vider(float quantiteRetiree) {
+		
+		if (this.ouverte) {
+			
+			float nouvelleContenanceEnL = this.contenanceEnL - quantiteRetiree;
+			
+			if (nouvelleContenanceEnL < this.capaciteEnL) {
+				
+				this.contenanceEnL = this.capaciteEnL;
+				
+				System.out.println("ma bouteille est videe");
+				
+				return false;
+				
+			} else {
+				
+				this.contenanceEnL = nouvelleContenanceEnL;
+				
+				System.out.println("ma bouteille a ete videe de " + quantiteRetiree);
+				
+				return true;
+				
+			}
+			
+		} else {
+			
+			System.out.println("ma bouteille est fermee");
+			
+			return false;
+			
+		}
+	
+	}
+	
+	/////////////////////////////////////////////////////////////////////////////////////////////////////
+	
 }
-
