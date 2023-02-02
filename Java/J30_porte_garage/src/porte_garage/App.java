@@ -5,15 +5,11 @@ public class App {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
-		PorteGarage maPorteAuto = new PorteGarage ("metal", "blanche", false, true);
+		PorteGarage maPorteAuto = new PorteGarage (false, false);
 		
-		maPorteAuto.ouvrir();
+		//couleur, ouverte, verrouillee
 		
 		maPorteAuto.fermer();
-		
-		maPorteAuto.verrouiller();
-		
-		maPorteAuto.deverrouiller();
 		
 	}
 

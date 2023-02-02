@@ -20,7 +20,7 @@ public class Bouteille {
 	
 	// constructeur (méthodes) 
 	
-	public Bouteille(float capaciteEnL, float contenanceEnL, boolean ouverte, boolean estRemplie) {
+	public Bouteille(float capaciteEnL, float contenanceEnL, boolean ouverte) {
 		
 		// this : cet objet
 		
@@ -35,12 +35,14 @@ public class Bouteille {
 	}
 	
 	/////////////////////////////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////////////////////////////////////
 	
 	// méthodes (opérations comportements)
 	
-	public Boolean ouvrir() {
+	public boolean ouvrir() {
 		
-		if (this.ouverte == true) {
+		if (this.ouverte) {
 			
 			System.out.println("ma bouteille est deja ouverte");
 			
@@ -50,7 +52,7 @@ public class Bouteille {
 		
 		else {
 			
-			this.ouverte = false;
+			this.ouverte = true;
 			
 			System.out.println("j'ouvre ma bouteille");
 			
@@ -62,11 +64,11 @@ public class Bouteille {
 	
 	/////////////////////////////////////////////////////////////////////////////////////////////////////
 	
-	public Boolean fermer() {
+	public boolean fermer() {
 		
-		if (this.ouverte == true) {
+		if (!this.ouverte) {
 			
-			System.out.println("je ferme ma bouteille");
+			System.out.println("ma bouteille est deja fermee");
 			
 			return false;
 			
@@ -76,45 +78,53 @@ public class Bouteille {
 			
 			this.ouverte = false;
 		
-				System.out.println("ma bouteille est deja fermee");
+			System.out.println("je ferme ma bouteille");
 		
-		return true;
+			return true;
 		
 		}
 		
 	}
 	
 	/////////////////////////////////////////////////////////////////////////////////////////////////////
-	/////////////////////////////////////////////////////////////////////////////////////////////////////
-	/////////////////////////////////////////////////////////////////////////////////////////////////////
 	
-	public Boolean remplir() {
+	public boolean remplir() {
 		
-		if (this.estRemplie() == true) {
+		if (this.ouverte) {
 		
-		System.out.println("ma bouteille est deja remplie");
-		
-		return false;
-		
+			if (this.estRemplie()) {
+			
+				System.out.println("ma bouteille est deja remplie");
+			
+				return false;
+			
+			}
+			
+			else {
+				
+				this.contenanceEnL = this.capaciteEnL;
+				
+				System.out.println("je remplis entierement ma bouteille");
+				
+				return true;
+				
+			}
+			
 		}
 		
 		else {
 			
-			this.estRemplie() = false;
+			System.out.println("ma bouteille est fermee");
 			
-			//TODO KER modifier la contenance
-			
-			System.out.println("je rempli ma bouteille");
-			
-			return true;
+			return false;
 			
 		}
-		
+			
 	}
 	
 	/////////////////////////////////////////////////////////////////////////////////////////////////////
 	
-	public Boolean remplir(float quantiteAjoutee) {
+	public boolean remplir(float quantiteAjoutee) {
 		
 		if (this.ouverte) {
 			
@@ -124,21 +134,27 @@ public class Bouteille {
 					
 				//this.contenanceEnL = this.capaciteEnL;
 						
-				System.out.println("ma bouteille va deborder, donc je ne la remplie pas");
+				System.out.println("ma bouteille va deborder, donc je ne la remplis pas");
 				
 				return false; 
 						
-			} else {
+			}
+
+			else {
 				
 				this.contenanceEnL = nouvelleContenanceEnL;
 					
-				System.out.println("ma bouteille a ete remplie de " + quantiteAjoutee);
+				System.out.println("ma bouteille a ete remplie de " + quantiteAjoutee +
+						
+						", elle contient mainteant " + this.contenanceEnL);
 				
 				return true;
 				
 			}
 				
-		} else {
+		}
+
+		else {
 			
 			System.out.println("ma bouteille est fermee");
 			
@@ -150,27 +166,23 @@ public class Bouteille {
 	
 	/////////////////////////////////////////////////////////////////////////////////////////////////////
 		
-	public Boolean vider() { //TODO KER
+	public boolean vider() {
 			
-		if (this.estRemplie() == false) {//TODO KER
-			
-		System.out.println("je vide ma bouteille");
+		if (this.contenanceEnL > 0) {
 		
-		//il faut changer la contenance
+			this.contenanceEnL = 0;
 			
-		return true;
+			System.out.println("je vide entierement ma bouteille");
+			
+			return true;
 		
 		}
 		
 		else {
 			
-			//this.remplie = true;
+			System.out.println("ma bouteille est deja vide");
 			
-			//il faut mettre la contenance a zero
-			
-			System.out.println("ma bouteille est vide");
-			
-			return true;
+			return false;
 	
 		}
 		
@@ -178,7 +190,7 @@ public class Bouteille {
 	
 	/////////////////////////////////////////////////////////////////////////////////////////////////////
 	
-public Boolean vider(float quantiteRetiree) {
+	public boolean vider(float quantiteRetiree) {
 		
 		if (this.ouverte) {
 			
@@ -186,7 +198,7 @@ public Boolean vider(float quantiteRetiree) {
 			
 			if (nouvelleContenanceEnL < this.capaciteEnL) {
 				
-				this.contenanceEnL = this.capaciteEnL;
+				this.contenanceEnL = 0;
 				
 				System.out.println("ma bouteille est videe");
 				
@@ -196,7 +208,9 @@ public Boolean vider(float quantiteRetiree) {
 				
 				this.contenanceEnL = nouvelleContenanceEnL;
 				
-				System.out.println("ma bouteille a ete videe de " + quantiteRetiree);
+				System.out.println("ma bouteille a ete videe de " + quantiteRetiree + 
+						
+						" elle contient maintenant " + this.contenanceEnL);
 				
 				return true;
 				
@@ -210,6 +224,14 @@ public Boolean vider(float quantiteRetiree) {
 			
 		}
 	
+	}
+	
+	public String toString() {
+		
+		return "capaciteEnL = " + this.capaciteEnL + 
+				" ; contenanceEnL = " + this.contenanceEnL +
+				" ; ouverte = " + this.ouverte;
+				
 	}
 	
 	/////////////////////////////////////////////////////////////////////////////////////////////////////

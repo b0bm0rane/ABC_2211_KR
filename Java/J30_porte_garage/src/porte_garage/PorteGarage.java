@@ -2,56 +2,132 @@ package porte_garage;
 
 public class PorteGarage {
 	
-	private String matiere;
-	
-	private String couleur;
-	
 	private boolean ouverte;
 	
 	private boolean verrouillee;
 	
-	public PorteGarage (String mat, String coul, boolean ouv, boolean ver) {
-	
-	this.matiere = mat;
-	
-	this.couleur = coul;
-	
-	this.ouverte = ouv;
-	
-	this.verrouillee = ver;
+	public PorteGarage (boolean ouverte, boolean verrouillee) {
+		
+		this.ouverte = ouverte;
+		
+		this.verrouillee = verrouillee;
 	
 	}
 	
-	public void ouvrir() {
+	/////////////////////////////////////////////////////////////////////////////////////////////////////
+	
+	public boolean ouvrir() {
 		
-		this.ouverte = true;
+		if (!this.verrouillee) {
+			
+			if (!this.ouverte) {
 				
-			System.out.println("j'ai ouvert ma porte de garage");
-	
+				System.out.println("j'ouvre ma porte de garage");
+
+				this.ouverte = true;
+				
+				return true;
+				
+			}
+		
+			else {
+				
+				System.out.println("ma porte de garage est deja ouverte");
+				
+				return false;
+				
+				}
+				
+			}
+		
+		else {
+			
+			System.out.println("ma porte de garage est verrouillee");
+			
+			return false;
+			
+		}
+			
 	}
-			
-	public void fermer() {
+	
+	/////////////////////////////////////////////////////////////////////////////////////////////////////
+	
+	public boolean fermer() {
 		
-		this.ouverte = false;
-		
-			System.out.println("j'ai ferme ma porte de garage");		
+		if (!this.verrouillee) {
 			
+			if (this.ouverte) {
+				
+				System.out.println("je ferme ma porte de garage");
+		
+				this.ouverte = false;
+				
+				return true;
+				
+			}
+			
+			else System.out.println("ma porte de garage est deja fermee");
+			
+			return false;
+			
+		}
+		
+		else {
+			
+			System.out.println("ma porte de garage est verrouillee");
+			
+			return false;
+			
+		}
+		
 	}
 	
-	public void verrouiller() {
-		
-		this.verrouillee = true;
-		
-			System.out.println("j'ai verrouille ma porte de garage");
-		
-	}		
-			
-	public void deverrouiller() {
-		
-		this.verrouillee = false;
-		
-			System.out.println("j'ai deverrouille ma porte de garage");
-			
-	}
+	/////////////////////////////////////////////////////////////////////////////////////////////////////
 	
-}
+	public boolean verrouiller() {
+		
+		if (this.verrouillee) {
+		
+			System.out.println("ma porte de garage est deja verrouillee");
+			
+			return false;
+		
+		}		
+		
+		else {
+			
+			this.verrouillee = true;
+			
+			System.out.println("je verrouille ma porte de garage");
+			
+			return true;
+			
+		}
+			
+	}	
+	
+	
+	/////////////////////////////////////////////////////////////////////////////////////////////////////
+	
+	public boolean deverrouiller() {
+		
+		if (!this.verrouillee) {
+		
+			System.out.println("ma porte de garage est deja deverrouillee");
+			
+			return false;
+			
+		}
+	
+		else {
+			
+			this.verrouillee = false;
+			
+			System.out.println("je deverrouille ma porte de garage");
+			
+			return true;
+			
+		}
+	}
+
+}	
