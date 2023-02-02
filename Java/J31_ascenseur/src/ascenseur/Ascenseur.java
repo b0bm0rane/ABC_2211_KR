@@ -4,30 +4,78 @@ public class Ascenseur {
 
 	private boolean ouvert;
 	
-	private boolean verrouille;
+	private boolean statique;
 	
-	private int etage;
+	private int monEtage;
 	
-	private int personne;
+	private int ascEtage;
 	
-	public Ascenseur (boolean ouvert, boolean verrouille, int etage, int personne) {
+	private int etageMini;
+	
+	private int etageMaxi;
+	
+	public Ascenseur (boolean ouvert, boolean statique, int monEtage, int ascEtage, int etageMini, int etageMaxi) {
 		
 		this.ouvert = ouvert;
 		
-		this.verrouille = verrouille;
+		this.statique = statique;
 		
-		this.etage = etage;
+		this.ascEtage = ascEtage;
 		
-		this.personne = personne;
+		this.monEtage = monEtage;
+		
+		this.etageMini = etageMini;
+		
+		this.etageMaxi = etageMaxi;
 		
 	}
 	
-	// TODO KR ouvrir fermer verrouiller deverrouiller monter descendre remplir remplir() vider vider()
+	// TODO KR appeler monter descendre
+	
+	////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	
 	public boolean ouvrir() {
 		
+		if (this.statique) {
+			
+			System.out.println("j'ouvre la porte de l'ascenseur");
 		
+			return true;
+				
+		}
+		
+		else {
+			
+			System.out.println("l'ascenseur est en mouvement");				
+		
+			return false;
+			
+		}
 		
 	}
+	
+	////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+	
+	public boolean fermer() {
+		
+		if (this.statique) {
+			
+			System.out.println("je ferme la porte de l'ascenseur");
+			
+			return true;
+			
+		}
+		
+		else {
+			
+			System.out.println("l'ascenseur est en mouvement");
+			
+			return false;
+		
+		}
+		
+	}
+	
+	////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	
 }
