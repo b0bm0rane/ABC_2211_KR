@@ -4,7 +4,7 @@ public class Ascenseur {
 
 	private boolean ouvert;
 	
-	private boolean statique;
+	private int vitesse;
 	
 	private int monEtage;
 	
@@ -14,11 +14,11 @@ public class Ascenseur {
 	
 	private int etageMaxi;
 	
-	public Ascenseur (boolean ouvert, boolean statique, int monEtage, int ascEtage, int etageMini, int etageMaxi) {
+	public Ascenseur (boolean ouvert, int vitesse, int monEtage, int ascEtage, int etageMini, int etageMaxi) {
 		
 		this.ouvert = ouvert;
 		
-		this.statique = statique;
+		this.vitesse = vitesse;
 		
 		this.ascEtage = ascEtage;
 		
@@ -32,11 +32,11 @@ public class Ascenseur {
 	
 	// TODO KR appeler monter descendre
 	
-	////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+	///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	
 	public boolean ouvrir() {
 		
-		if (this.statique) {
+		if (this.vitesse == 0) {
 			
 			System.out.println("j'ouvre la porte de l'ascenseur");
 		
@@ -54,11 +54,11 @@ public class Ascenseur {
 		
 	}
 	
-	////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+	///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	
 	public boolean fermer() {
 		
-		if (this.statique) {
+		if (this.vitesse == 0) {
 			
 			System.out.println("je ferme la porte de l'ascenseur");
 			
@@ -76,6 +76,76 @@ public class Ascenseur {
 		
 	}
 	
-	////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+	///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+	
+	public boolean monter() {
+		
+		if (!this.ouvert) {
+		
+			if (this.monEtage > this.ascEtage) 
+			
+			System.out.println("l'ascenseur monte");
+			
+			this.vitesse = 1;
+			
+			return true;
+			
+		}
+			
+		else {
+				
+			System.out.println("l'ascenseur est ouvert");
+			
+			return false;
+		
+		}
+		
+	}
+	
+	///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+	
+	public boolean descendre() {
+		
+		if (!this.ouvert) {
+		
+			if (this.monEtage < this.ascEtage) 
+			
+			System.out.println("l'ascenseur descends");
+			
+			this.vitesse = -1;
+			
+			return true;
+			
+		}
+			
+		else {
+				
+			System.out.println("l'ascenseur est ouvert");
+			
+			return false;
+		
+		}
+		
+	}
+	
+	///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+	
+	/*public boolean appeler() {
+	
+		if (this.monEtage < this.ascEtage) {
+		
+			
+			
+		}
+		
+		else if (this.monEtage > this.ascEtage) {
+			
+			
+			
+		}
+		
+	}*/
+	
+	///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	
 }

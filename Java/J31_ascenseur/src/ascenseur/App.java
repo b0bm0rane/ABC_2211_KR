@@ -5,11 +5,11 @@ public class App {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
-		Ascenseur monAscenseur = new Ascenseur (false, false, 0, 2, -1, 3); 
+		Ascenseur monAscenseur = new Ascenseur (false, 0, 0, 2, -1, 3); 
 		
-		// ouvert, statique, monEtage, ascEtage, mini, maxi
+		// ouvert, vitesse, monEtage, ascEtage, etageMini, etageMaxi
 		
-		monAscenseur.fermer();
+		monAscenseur.descendre();
 		
 	}
 
