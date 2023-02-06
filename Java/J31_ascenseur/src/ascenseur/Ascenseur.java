@@ -10,19 +10,37 @@ public class Ascenseur {
 	
 	private int ascEtage;
 	
+	private int etageCible;
+	
 	private int etageMini;
 	
 	private int etageMaxi;
 	
-	public Ascenseur (boolean ouvert, int vitesse, int monEtage, int ascEtage, int etageMini, int etageMaxi) {
+	public Ascenseur(boolean ouvert, 
+					
+					int vitesse, 
+					
+					int monEtage, 
+					
+					int ascEtage, 
+					
+					int etageCible, 
+					
+					int etageMini, 
+					
+					int etageMaxi) 
+	
+	{
 		
 		this.ouvert = ouvert;
 		
 		this.vitesse = vitesse;
 		
+		this.monEtage = monEtage;
+		
 		this.ascEtage = ascEtage;
 		
-		this.monEtage = monEtage;
+		this.etageCible = etageCible;
 		
 		this.etageMini = etageMini;
 		
@@ -130,50 +148,90 @@ public class Ascenseur {
 	
 	public boolean monter() {
 		
-		if (!this.ouvert) {
+		if (this.monEtage == this.ascEtage) {
 		
-			if (this.monEtage > this.ascEtage) 
+			if (!this.ouvert) {
 			
-			System.out.println("l'ascenseur monte");
-			
-			this.vitesse = 1;
-			
-			return true;
-			
-		}
-			
-		else {
+				if (this.monEtage < this.etageCible) {
 				
-			System.out.println("l'ascenseur est ouvert");
+					System.out.println("j'appuie sur le bouton, l'ascenseur monte");
+					
+					this.vitesse = 1;
+					
+					return true;
+				
+				}
+				
+				else {
+					
+					return false;
+					
+				}
+			
+			}
+				
+			else if (this.monEtage == this.etageCible) {
+					
+				System.out.println("je suis au bon etage");
+				
+				return false;
+				
+			}
+				
+			else {
+					
+				System.out.println("l'ascenseur est ouvert");
+				
+				return false;
+			
+			}
+		
+		}
+				
+		else {
+			
+			System.out.println("je ne suis pas dans l'ascenseur");
 			
 			return false;
-		
+			
 		}
-		
+			
 	}
-	
+
 	///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	
 	public boolean descendre() {
 		
-		if (!this.ouvert) {
+		if (this.monEtage == this.ascEtage) {
 		
-			if (this.monEtage < this.ascEtage) 
+			if (!this.ouvert) {
 			
-			System.out.println("l'ascenseur descends");
-			
-			this.vitesse = -1;
-			
-			return true;
-			
-		}
-			
-		else {
+				if (this.monEtage > this.etageCible)
 				
-			System.out.println("l'ascenseur est ouvert");
+				System.out.println("j'appuie sur le bouton, l'ascenseur descends");
+				
+				this.vitesse = -1;
+				
+				return true;
+				
+			}
+				
+			else {
+					
+				System.out.println("l'ascenseur est ouvert");
+				
+				return false;
+			
+				}
+				
+			}
+		
+		else {
+			
+			System.out.println("je ne suis pas dans l'ascenseur");
 			
 			return false;
-		
+			
 		}
 		
 	}
@@ -188,11 +246,15 @@ public class Ascenseur {
 				
 				System.out.println("j'appelle l'ascenseur qui descends me chercher");
 				
+				this.vitesse = -1;
+				
 			}
 			
 			else if (this.monEtage > this.ascEtage) {
 				
-				System.out.println("j'appelle l'ascenseur qui descends me chercher");
+				System.out.println("j'appelle l'ascenseur qui monte me chercher");
+				
+				this.vitesse = 1;
 				
 			}
 			
