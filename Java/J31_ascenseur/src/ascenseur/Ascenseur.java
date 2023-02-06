@@ -36,41 +36,91 @@ public class Ascenseur {
 	
 	public boolean ouvrir() {
 		
-		if (this.vitesse == 0) {
-			
-			System.out.println("j'ouvre la porte de l'ascenseur");
+		if (this.monEtage == this.ascEtage) {
 		
-			return true;
+			if (this.vitesse == 0) {
 				
+				if (this.ouvert == false) {
+				
+				System.out.println("j'ouvre la porte de l'ascenseur");
+			
+				return true;
+				
+				}
+				
+				else {
+					
+				System.out.println("la porte de l'ascenseur est deja ouverte");
+				
+				return false;
+					
+				}
+					
+			}	
+			
+			else {
+				
+				System.out.println("l'ascenseur est en mouvement");				
+			
+				return false;
+				
+			}
+			
 		}
-		
+			
 		else {
 			
-			System.out.println("l'ascenseur est en mouvement");				
-		
-			return false;
 			
+		System.out.println("l'ascenseur n'est pas a mon etage");
+		
+		return false;
+		
 		}
 		
 	}
 	
 	///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-	
+	 	
 	public boolean fermer() {
 		
-		if (this.vitesse == 0) {
+		if (this.monEtage == this.ascEtage) {
+		
+			if (this.vitesse == 0) {
+				
+				if (this.ouvert == true) {
+				
+				System.out.println("je ferme la porte de l'ascenseur");
 			
-			System.out.println("je ferme la porte de l'ascenseur");
+				return true;
+				
+				}
+				
+				else {
+					
+				System.out.println("la porte de l'ascenseur est deja fermee");
+				
+				return false;
+					
+				}
+					
+			}	
 			
-			return true;
+			else {
+				
+				System.out.println("l'ascenseur est en mouvement");				
+			
+				return false;
+				
+			}
 			
 		}
-		
+			
 		else {
 			
-			System.out.println("l'ascenseur est en mouvement");
 			
-			return false;
+		System.out.println("l'ascenseur n'est pas a mon etage");
+		
+		return false;
 		
 		}
 		
@@ -130,21 +180,35 @@ public class Ascenseur {
 	
 	///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	
-	/*public boolean appeler() {
+	public boolean appeler() {
 	
-		if (this.monEtage < this.ascEtage) {
+		if (this.monEtage != this.ascEtage) {
 		
+			if (this.monEtage < this.ascEtage) {
+				
+				System.out.println("j'appelle l'ascenseur qui descends me chercher");
+				
+			}
 			
+			else if (this.monEtage > this.ascEtage) {
+				
+				System.out.println("j'appelle l'ascenseur qui descends me chercher");
+				
+			}
+			
+			return true;
+		
+		}
+		
+		else {
+			
+			System.out.println("l'ascenseur est deja a mon etage");
+			
+			return false;
 			
 		}
 		
-		else if (this.monEtage > this.ascEtage) {
-			
-			
-			
-		}
-		
-	}*/
+	}
 	
 	///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	
