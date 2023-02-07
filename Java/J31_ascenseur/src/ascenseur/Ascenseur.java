@@ -4,17 +4,17 @@ public class Ascenseur {
 
 	private boolean ouvert;
 	
-	private int vitesse;
+	private int vitesse; //-1, 0, 1
 	
 	private int monEtage;
 	
-	private int ascEtage;
+	private int ascEtage;// etage ascenseur
 	
 	private int etageCible;
 	
-	private int etageMini;
+	private final int etageMini; //final = constante
 	
-	private int etageMaxi;
+	private final int etageMaxi; //final = constante
 	
 	public Ascenseur(boolean ouvert, 
 					
@@ -48,8 +48,6 @@ public class Ascenseur {
 		
 	}
 	
-	// TODO KR appeler monter descendre
-	
 	///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	
 	public boolean ouvrir() {
@@ -62,6 +60,8 @@ public class Ascenseur {
 				
 				System.out.println("j'ouvre la porte de l'ascenseur");
 			
+				this.ouvert = true;
+				
 				return true;
 				
 				}
@@ -109,6 +109,8 @@ public class Ascenseur {
 				
 				System.out.println("je ferme la porte de l'ascenseur");
 			
+				this.ouvert = false;
+				
 				return true;
 				
 				}
@@ -206,13 +208,29 @@ public class Ascenseur {
 		
 			if (!this.ouvert) {
 			
-				if (this.monEtage > this.etageCible)
+				if (this.monEtage > this.etageCible) {
 				
-				System.out.println("j'appuie sur le bouton, l'ascenseur descends");
+					System.out.println("j'appuie sur le bouton, l'ascenseur descends");
+					
+					this.vitesse = -1;
+					
+					return true;
 				
-				this.vitesse = -1;
+				}
 				
-				return true;
+				else {
+					
+					return false;
+					
+				}
+			
+			}
+				
+			else if (this.monEtage == this.etageCible) {
+					
+				System.out.println("je suis au bon etage");
+				
+				return false;
 				
 			}
 				
@@ -222,10 +240,10 @@ public class Ascenseur {
 				
 				return false;
 			
-				}
-				
 			}
 		
+		}
+				
 		else {
 			
 			System.out.println("je ne suis pas dans l'ascenseur");
@@ -233,7 +251,7 @@ public class Ascenseur {
 			return false;
 			
 		}
-		
+			
 	}
 	
 	///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
