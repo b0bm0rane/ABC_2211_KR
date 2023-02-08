@@ -16,6 +16,8 @@ public class Robot {
 		
 		this.branche = branche;
 		
+		
+		
 	}
 	
 }

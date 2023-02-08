@@ -7,9 +7,11 @@ public class App {
 
 		PorteGarage maPorteAuto = new PorteGarage (false, false);
 		
-		//couleur, ouverte, verrouillee
+		//ouverte, verrouillee
 		
 		maPorteAuto.fermer();
+		
+		System.out.println(maPorteAuto.toString());
 		
 	}
 

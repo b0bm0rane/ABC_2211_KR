@@ -129,5 +129,11 @@ public class PorteGarage {
 			
 		}
 	}
+	
+	public String toString() {
+		
+		return "ouverte : " + this.ouverte + "\n" + "verrouillee : " + this.verrouillee;
+		
+	}
 
 }	
