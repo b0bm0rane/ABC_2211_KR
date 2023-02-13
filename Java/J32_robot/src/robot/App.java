@@ -7,6 +7,10 @@ public class App {
 
 	Robot robotChat	= new Robot(false, 80, false, "Pixel", false); // allume, niveauCharge, branche, nom, queue
 	
+	System.out.println(robotChat.toString());
+	
+	System.out.println();
+	
 	robotChat.miauler();
 		
 	robotChat.allumer();
@@ -17,7 +21,9 @@ public class App {
 	
 	robotChat.ronron();
 	
-	robotChat.eteindre();
+	System.out.println();
+	
+	System.out.println(robotChat.toString());
 	
 	}
 

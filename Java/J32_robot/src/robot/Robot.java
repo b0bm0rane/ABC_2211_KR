@@ -103,6 +103,8 @@ public boolean miauler() {
 			
 			System.out.println(this.miaou);
 			
+			this.niveauCharge = this.niveauCharge - 5;
+			
 			return true;
 			
 		}
@@ -125,6 +127,8 @@ public boolean ronron() {
 		
 			System.out.println(this.ronron);
 		
+			this.niveauCharge = this.niveauCharge - 5;
+			
 			return true;
 		
 		}
@@ -147,6 +151,8 @@ public boolean remueQueue() {
 			
 			System.out.println("le robot remue la queue");
 			
+			this.niveauCharge = this.niveauCharge - 10;
+			
 			return true;
 			
 		}
@@ -157,6 +163,14 @@ public boolean remueQueue() {
 			
 			return false;
 		}
+	
+	}
+
+	///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+public String toString() {
+	
+	return "nom : " + this.nom + "\n" + "allume : " + this.allume + "\n" + "niveauCharge : " + this.niveauCharge + "\n" + "branche : " + this.branche;
 	
 	}
 
