@@ -79,7 +79,7 @@ public boolean eteindre() {
 			
 				this.allume = false;
 			
-				System.out.println("le robot s eteinds");
+				System.out.println("le robot s'eteint");
 				
 				return true;
 		
@@ -87,7 +87,7 @@ public boolean eteindre() {
 				
 		else {
 				
-				System.out.println("le robot est deja eteinds");
+				System.out.println("le robot est deja eteint");
 				
 				return false;
 	
@@ -109,7 +109,7 @@ public boolean miauler() {
 	
 		else {
 			
-			System.out.println("le robot est eteinds");
+			System.out.println("le robot est eteint");
 			
 			return false;
 			
@@ -131,11 +131,33 @@ public boolean ronron() {
 	
 		else {
 		
-			System.out.println("le robot est eteinds");
+			System.out.println("le robot est eteint");
 			
 			return false;
 		
 		}
+		
+	}
+
+	///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+public boolean remueQueue() {
+	
+		if (this.allume) {
+			
+			System.out.println("le robot remue la queue");
+			
+			return true;
+			
+		}
+		
+		else {
+			
+			System.out.println("le robot est eteint");
+			
+			return false;
+		}
+	
 	}
 
 }
