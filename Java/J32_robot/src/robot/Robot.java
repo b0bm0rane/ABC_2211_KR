@@ -16,25 +16,26 @@ public class Robot {
 	
 	private boolean queue;
 	
-	public Robot (boolean allume, int niveauCharge, boolean branche, String nom, String miaou, String ronron, boolean queue) {
+	public Robot(boolean _allume, int _niveauCharge, boolean _branche, String _nom, boolean _queue) {
 		
-		this.allume = allume;
+		this.allume = _allume;
 		
-		this.niveauCharge = niveauCharge;
+		this.niveauCharge = _niveauCharge;
 		
-		this.branche = branche;
+		this.branche = _branche;
 		
-		this.nom = nom;
+		this.nom = _nom;
 		
 		this.miaou = "Miaou !, miaouuuuu !!, miaouuuuuuuuuu !!!";
 		
 		this.ronron = "Rrrrrrrrrr ... ";
 		
-		this.queue = queue;
+		this.queue = _queue;
 		
-		}
+	}
 	
-	////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+	
+	///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	
 	public boolean allumer() {
 		
@@ -44,11 +45,15 @@ public class Robot {
 				
 				this.allume = true;
 			
+				System.out.println("le robot s allume");
+				
 				return true;
 		
 			}
 				
 			else {
+				
+				System.out.println("impossible d'allumer le robot");
 				
 				return false;
 				
@@ -58,13 +63,15 @@ public class Robot {
 		
 		else {
 			
+				System.out.println("le robot est deja allume");
+				
 				return false;
 		
 		}	
 	
 	}
 
-	////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+	///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	
 public boolean eteindre() {
 		
@@ -72,11 +79,15 @@ public boolean eteindre() {
 			
 				this.allume = false;
 			
+				System.out.println("le robot s eteinds");
+				
 				return true;
 		
 			}
 				
 		else {
+				
+				System.out.println("le robot est deja eteinds");
 				
 				return false;
 	
@@ -84,16 +95,47 @@ public boolean eteindre() {
 				
 	}			
 				
-	////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+	///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 public boolean miauler() {
 	
 		if (this.allume) {
 			
+			System.out.println(this.miaou);
 			
+			return true;
 			
 		}
 	
+		else {
+			
+			System.out.println("le robot est eteinds");
+			
+			return false;
+			
+		}
+		
+	}
+
+	///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+public boolean ronron() {
+	
+		if (this.allume) {
+		
+			System.out.println(this.ronron);
+		
+			return true;
+		
+		}
+	
+		else {
+		
+			System.out.println("le robot est eteinds");
+			
+			return false;
+		
+		}
 	}
 
 }
