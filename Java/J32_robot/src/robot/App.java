@@ -5,25 +5,21 @@ public class App {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
-	Robot robotChat	= new Robot(false, 80, false, "Pixel", false); // allume, niveauCharge, branche, nom, queue
+	Robot robotChat	= new Robot(true, 80, true, "Pixel"); // allume, niveauCharge, branche, nom
+	
+	Telecommande telRobotChat = new Telecommande(robotChat);
 	
 	System.out.println(robotChat.toString());
 	
-	System.out.println();
+	robotChat.eteindre();
 	
-	robotChat.miauler();
-		
-	robotChat.allumer();
+	robotChat.recharger();
 	
-	robotChat.miauler();
+	System.out.println("\n" + robotChat.toString());
 	
-	robotChat.remueQueue();
+	telRobotChat.boutonOn();
 	
-	robotChat.ronron();
-	
-	System.out.println();
-	
-	System.out.println(robotChat.toString());
+	System.out.println("\n" + robotChat.toString());
 	
 	}
 

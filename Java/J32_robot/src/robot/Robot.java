@@ -14,9 +14,7 @@ public class Robot {
 
 	private String ronron;
 	
-	private boolean queue;
-	
-	public Robot(boolean _allume, int _niveauCharge, boolean _branche, String _nom, boolean _queue) {
+	public Robot(boolean _allume, int _niveauCharge, boolean _branche, String _nom) {
 		
 		this.allume = _allume;
 		
@@ -29,8 +27,6 @@ public class Robot {
 		this.miaou = "Miaou !, miaouuuuu !!, miaouuuuuuuuuu !!!";
 		
 		this.ronron = "Rrrrrrrrrr ... ";
-		
-		this.queue = _queue;
 		
 	}
 	
@@ -73,7 +69,7 @@ public class Robot {
 
 	///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	
-public boolean eteindre() {
+	public boolean eteindre() {
 		
 		if (this.allume) {
 			
@@ -95,6 +91,74 @@ public boolean eteindre() {
 				
 	}			
 				
+	///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+	
+	public boolean brancher() {
+		
+		if (!this.branche) {
+			
+				this.branche = true;
+			
+				System.out.println("je branche le robot");
+				
+				return true;
+	
+			}
+			
+		else {
+			
+				System.out.println("le robot est deja branche");
+				
+				return false;
+			
+		}
+			
+	}
+	
+	///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+	
+	public boolean debrancher() {
+		
+		if (this.branche) {
+			
+				this.branche = false;
+			
+				System.out.println("je debranche le robot");
+				
+				return true;
+	
+			}
+			
+		else {
+			
+				System.out.println("le robot est deja debranche");
+				
+				return false;
+			
+		}
+			
+	}
+	
+	///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+	
+	public boolean recharger() {
+		
+		if (this.branche) {
+			
+				this.niveauCharge = 100;
+				
+				System.out.println("le robot est recharge");
+				
+				return true;
+			}
+		
+		else {
+			
+				return false;
+		}
+		
+	}
+	
 	///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 public boolean miauler() {
@@ -145,7 +209,7 @@ public boolean ronron() {
 
 	///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-public boolean remueQueue() {
+public boolean remuerQueue() {
 	
 		if (this.allume) {
 			
@@ -170,7 +234,7 @@ public boolean remueQueue() {
 
 public String toString() {
 	
-	return "nom : " + this.nom + "\n" + "allume : " + this.allume + "\n" + "niveauCharge : " + this.niveauCharge + "\n" + "branche : " + this.branche;
+	return "nom : " + this.nom + "\n" + "allume : " + this.allume + "\n" + "niveauCharge : " + this.niveauCharge + "\n" + "branche : " + this.branche + "\n";
 	
 	}
 
