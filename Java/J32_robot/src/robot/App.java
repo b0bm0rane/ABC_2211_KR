@@ -18,6 +18,13 @@ public class App {
 	System.out.println("\n" + robotChat.toString());
 	
 	telRobotChat.boutonOn();
+	robotChat.debrancher();
+	robotChat.remuerQueue();
+	robotChat.remuerQueue();
+	robotChat.remuerQueue();
+	robotChat.remuerQueue();
+	robotChat.remuerQueue();
+	robotChat.allumer();
 	
 	System.out.println("\n" + robotChat.toString());
 	
