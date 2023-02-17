@@ -20,7 +20,8 @@ public class Robot {
 	// le robot commence toujours eteint
 	private boolean estAllume = false;
 
-	// tableau carte NOMBRE_CASES x NOMBRE_CASES � remplir avec la fonction cartographier, ne pas depasser 99, 10 par defaut
+	// tableau carte NOMBRE_CASES x NOMBRE_CASES � remplir avec la fonction cartographier, ne pas depasser 99, 10 par 
+	// defaut
 	private final int NOMBRE_CASES = 10;
 	private boolean[][] carte = new boolean[NOMBRE_CASES][NOMBRE_CASES];
 

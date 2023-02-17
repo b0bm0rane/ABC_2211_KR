@@ -7,7 +7,8 @@ enum Direction {
 public class App {
 
 	/**
-	 * 	objectif : ramasser toutes les piles avec un robot sans qu'il soit en manque d'energie, modifier le code selon les resultats
+	 * 	objectif : ramasser toutes les piles avec un robot sans qu'il soit en manque d'energie, modifier le code selon les 
+	 * resultats
 		
 		/etapes a suivre :
 		- allumer le robot 
