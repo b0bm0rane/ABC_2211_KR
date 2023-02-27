@@ -35,9 +35,21 @@ public class Telecommande {
 		
 	}
 	
+	public boolean boutonDodo() {
+		
+		return this.robot.dodo();
+		
+	}
+	
 	public boolean boutonRemuerQueue() {
 		
 		return this.robot.remuerQueue();
+		
+	}
+	
+	public boolean boutonPapattes() {
+		
+		return this.robot.papattes();
 		
 	}
 	

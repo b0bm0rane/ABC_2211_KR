@@ -14,6 +14,8 @@ public class Robot {
 
 	private String ronron;
 	
+	private String dodo;
+	
 	public Robot(boolean _allume, int _niveauCharge, boolean _branche, String _nom) {
 		
 		this.allume = _allume;
@@ -27,6 +29,8 @@ public class Robot {
 		this.miaou = "Miaou !, miaouuuuu !!, miaouuuuuuuuuu !!!";
 		
 		this.ronron = "Rrrrrrrrrr ... ";
+		
+		this.dodo = "ZZZZZZZZZZ ...";
 		
 	}
 	
@@ -228,13 +232,36 @@ public class Robot {
 
 	///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+	public boolean dodo() {
+		
+		if (this.allume) {
+		
+			System.out.println(this.dodo);
+		
+			this.decharger(10);
+			
+			return true;
+		
+		}
+	
+		else {
+		
+			System.out.println("le robot est eteint");
+			
+			return false;
+		
+		}
+		
+	}
+	
+	///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	public boolean remuerQueue() {
 	
 		if (this.allume) {
 			
 			System.out.println("le robot remue la queue");
 			
-			this.decharger(20);
+			this.decharger(15);
 			
 			return true;
 			
@@ -249,6 +276,30 @@ public class Robot {
 	
 	}
 
+	///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+	
+	public boolean papattes() {
+		
+		if (this.allume) { 
+			
+			System.out.println("le robot fait ses papattes");
+			
+			this.decharger(20);
+			
+			return true;
+			
+		}
+		
+		else {
+			
+			System.out.println("le robot est eteint");
+			
+			return false;
+			
+		}
+		
+	}
+	
 	///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 	public String toString() {

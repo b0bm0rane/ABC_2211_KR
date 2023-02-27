@@ -19,11 +19,14 @@ public class App {
 	
 	telRobotChat.boutonOn();
 	robotChat.debrancher();
+	robotChat.dodo();
 	robotChat.remuerQueue();
 	robotChat.remuerQueue();
 	robotChat.remuerQueue();
 	robotChat.remuerQueue();
 	robotChat.remuerQueue();
+	robotChat.papattes();
+	robotChat.papattes();
 	robotChat.allumer();
 	
 	System.out.println("\n" + robotChat.toString());
