@@ -106,6 +106,8 @@ public class Robot {
 			
 				System.out.println("le robot est decharge");
 			
+				System.out.println("le robot a besoin de se reposer, l'enfant est griffe et fait une hemorragie");
+				
 				return this.eteindre();
 			
 		}
@@ -305,7 +307,7 @@ public class Robot {
 	public String toString() {
 	
 		return "nom : " + this.nom + "\n" + "allume : " + this.allume + "\n" + "niveauCharge : " + this.niveauCharge + "\n" + "branche : " + this.branche + "\n";
-	
+		
 	}
 
 }
